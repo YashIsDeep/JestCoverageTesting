@@ -1,0 +1,24 @@
+{
+  "name": "JestCoverageTesting",
+  "version": "1.0.0",
+  "description": "RUN WITH $node server.js$",
+  "main": "driver.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YashIsDeep/JestCoverageTesting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YashIsDeep/JestCoverageTesting/issues"
+  },
+  "homepage": "https://github.com/YashIsDeep/JestCoverageTesting#readme"
+}
