@@ -5,6 +5,7 @@
   "main": "driver.js",
   "dependencies": {},
   "devDependencies": {
+    "dependency-cruiser": "^9.1.0",
     "jest": "^26.0.1"
   },
   "scripts": {
