@@ -35,4 +35,4 @@ do
 # jest $line 
 done < "$input"
 
-rm allInfectedVertices.list
+rm vertices.list edges.list infVertices.list allInfectedVertices.list

@@ -1,9 +1,0 @@
-src/driver.js → src/findHypo.js
-src/driver.js → src/percentage.js
-src/driver.js → src/sayHello.js
-src/driver.js → src/square.js
-src/findHypo.js → src/math/add.js
-src/findHypo.js → src/square.js
-src/square.js → src/math/mul.js
-src/percentage.js → src/math/div.js
-src/percentage.js → src/math/mul.js
