@@ -2,7 +2,7 @@
   "name": "JestCoverageTesting",
   "version": "1.0.0",
   "description": "RUN WITH $node server.js$",
-  "main": "driver.js",
+  "main": "src/driver.js",
   "dependencies": {},
   "devDependencies": {
     "dependency-cruiser": "^9.1.0",

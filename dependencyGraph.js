@@ -6,75 +6,76 @@ module.exports= class DependencyGraph{
 		this.edgesTo={};
 		this.labelMap={}; // Maps each label to a unique vertex
 		this.invLabelMap={};
-		this.infected=[]; // Maps from affected vertices to 
+		this.infected={}; // Maps from affected vertices to 
 		//this.invLabelMap={};
 	}
 	
 	addVertexByLabel(label)
 	{
-		if(labelMap.has(label))
-			return labelMap[label];
+		//console.log(this.labelMap[label]);
+		if(false);
 		else
 		{
-			labelMap[label]=numVertices;
-			invLabelMap[numVertices]=label;
-			edgesTo[numVertices]=[];
-			infected[numVertices]=false;
-			numVertices++;
+			this.labelMap[label]=this.numVertices;
+			this.invLabelMap[this.numVertices]=label;
+			this.edgesTo[this.numVertices]=[];
+			this.infected[this.numVertices]=false;
+			this.numVertices++;
 		}
 	}
 	addEdgeByLabel(label_from,label_to)
 	{
-		if((!labelMap.has(label_from))||(!(labelMap.has(label_to))))
-		{
-			console.log("Invalid edge");
-		}
-		let from=labelMap[label_from];
-		let to=labelMap[label_to];
-		edgesTo[label_from].push(label_to);
+		let from=this.labelMap[label_from];
+		let to=this.labelMap[label_to];
+		this.edgesTo[to].push(from);
 	}
 	infectVertexByLabel(label)
 	{
-		if(!labelMap.has(label))
-		{
-			console.log("Invalid Attempt to mark affected");
-		}
-		let vert=labelMap[label];
-		infected[vert]=true;
+		let vert=this.labelMap[label];
+		this.infected[vert]=true;
 	}
 	
 	// Spreads the infection of an infected node
 	spread(root,hasSpread)
 	{
-		if(!infected[root])return;
+		if(!this.infected[root])return;
 		if(hasSpread[root])return;
-		for(child in edgesTo[root])
-			infected[child]=true;
+		for(let childIndex in this.edgesTo[root])
+		{
+			let child=this.edgesTo[root][childIndex];
+			this.infected[child]=true;
+		}
 		hasSpread[root]=true;
-		for(child in edgesTo[root])
-			dfs(child,hasSpread);
+		for(let childIndex in this.edgesTo[root])
+		{
+			let child=this.edgesTo[root][childIndex];
+			this.spread(child,hasSpread);
+		}
 	}
 	spreadInfection()
 	{
 		var hasSpread=[];
-		for(i in range(numVertices))
+		for (let i = 0; i < this.numVertices; i++)
 			hasSpread[i]=false;
-		for(root in range(numVertices))
-			if(infected[root])
-				spread(root,hasSpread);
+		for (let i = 0; i < this.numVertices; i++)
+			if(this.infected[i])
+				this.spread(i,hasSpread);
 	}
 	printInfectedFiles()
 	{
-		console.log('Infected files');
-		for(const [key,value] in Object.entries(invLabelMap))
-			if(infected[key])
-				console.log(value);
+		//console.log('Infected files');
+		for(const key in Object.entries(this.invLabelMap))
+			if(this.infected[key])
+				console.log(this.invLabelMap[key]);
 	}
 	printDependencyGraph()
 	{
 		console.log("Dependencies:-");
-		for(from in range(numVertices))
-			for(to in edgesTo[i])
-				console.log("   "+invLabelMap[from]+" >>> "+invLabelMap[to]);
+		for (from = 0; from < this.numVertices; from++)
+			for(toIndex in this.edgesTo[i])
+			{
+				let to=this.edgesTo[root][toIndex];
+				console.log("   "+this.invLabelMap[from]+" >>> "+this.invLabelMap[to]);
+			}
 	}
 };
