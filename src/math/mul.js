@@ -1,6 +1,6 @@
 function mul(a,b)
 {
-	return a*b+1;
+	return a*b;
 }
 module.exports.fun=mul;
 

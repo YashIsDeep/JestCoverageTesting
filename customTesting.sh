@@ -31,8 +31,10 @@ while IFS= read -r line
 do
   x="$line"
   y=${x%.js}
-  echo "jest $y.test.js"
-# jest $line 
+  FILE="$y.test.js"
+  if test -f "$FILE"; then
+  	jest "$FILE"
+  fi
 done < "$input"
 
-# rm vertices.list edges.list infVertices.list allInfectedVertices.list
+rm vertices.list edges.list infVertices.list allInfectedVertices.list
