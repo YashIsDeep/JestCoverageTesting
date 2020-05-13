@@ -46,7 +46,7 @@ graph.spreadInfection();
 graph.printInfectedFiles();
 
 
-console.log(graph.labelMap);
-console.log(graph.edgesTo);
-console.log(graph.invLabelMap);
-console.log(graph.infected);
+// console.log(graph.labelMap);
+// console.log(graph.edgesTo);
+// console.log(graph.invLabelMap);
+// console.log(graph.infected);
