@@ -34,7 +34,7 @@ module.exports= class DependencyGraph{
 		let vert=this.labelMap[label];
 		this.infected[vert]=true;
 	}
-	// hacc
+	// hacc 
 	// Spreads the infection of an infected node
 	spread(root,hasSpread)
 	{
