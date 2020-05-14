@@ -34,6 +34,10 @@ module.exports= class DependencyGraph{
 		let vert=this.labelMap[label];
 		this.infected[vert]=true;
 	}
+<<<<<<< Updated upstream
+=======
+	
+>>>>>>> Stashed changes
 	// Spreads the infection of an infected node
 	spread(root,hasSpread)
 	{
