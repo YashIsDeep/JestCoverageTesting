@@ -1,5 +1,5 @@
 var fun=require("./sayHello.js").fun;
-describe("Square method Test", () => {
+describe("Greeting Test", () => {
   test("It should greet the user", () => {
     const output = "Hello!";
 
