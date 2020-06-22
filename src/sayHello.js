@@ -1,6 +1,6 @@
 function sayHello()
 {
-	return 'Hello!';
+	return "Hello!";
 }
 function demo()
 {
